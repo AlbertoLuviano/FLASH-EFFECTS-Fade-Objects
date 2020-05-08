@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/FadeCenter/ScreenFade.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/FadeCenter/FadeWalls.shader" type="Shader" id=2]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+seed = 2
+period = 16.0
+
+[sub_resource type="NoiseTexture" id=2]
+height = 272
+seamless = true
+noise = SubResource( 1 )
+
+[resource]
+shader = ExtResource( 2 )
+shader_param/fadeRange = 0.611
+shader_param/color = Color( 1, 0.631373, 0, 1 )
+shader_param/noiseTexture = SubResource( 2 )
+shader_param/screenFadeTexture = ExtResource( 1 )
